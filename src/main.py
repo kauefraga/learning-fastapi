@@ -17,7 +17,3 @@ def Hi():
 def Teapot():
   data = requests.get('http://httpbin.org/status/418').text
   return '<pre>'+data+'</pre>'
-
-@app.get('db', response_class=HTMLResponse)
-def Db():
-  return
