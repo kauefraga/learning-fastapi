@@ -6,12 +6,14 @@ app = FastAPI()
 
 @app.get('/')
 def Hello():
-  return {'Hello': 'world'}
+  return {
+    message: 'Hello, world!',
+    routes: ['/hi', '/teapot']
+  }
 
 @app.get('/hi')
-def Hi():
-  times = int(os.environ.get('TIMES', 3))
-  return {'Message': 'Hi! '*times}
+def Hi(name: str = ''):
+  return {'Message': 'Hi! ' + name}
 
 @app.get('/teapot', response_class=HTMLResponse)
 def Teapot():
