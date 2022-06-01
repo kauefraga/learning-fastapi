@@ -7,8 +7,8 @@ app = FastAPI()
 @app.get('/')
 def Hello():
   return {
-    message: 'Hello, world!',
-    routes: ['/hi', '/teapot']
+   'message': 'Hello, world!',
+   'routes': ['/hi', '/teapot']
   }
 
 @app.get('/hi')
