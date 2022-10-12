@@ -1,4 +1,4 @@
-import requests, os
+import requests
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
@@ -13,9 +13,11 @@ def Hello():
 
 @app.get('/hi')
 def Hi(name: str = ''):
-  return {'Message': 'Hi! ' + name}
+  return {
+    'Message': 'Hi! ' + name
+  }
 
 @app.get('/teapot', response_class=HTMLResponse)
 def Teapot():
-  data = requests.get('http://httpbin.org/status/418').text
+  data = requests.get('https://httpbin.org/status/418').text
   return '<pre>'+data+'</pre>'
