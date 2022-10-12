@@ -8,7 +8,10 @@ app = FastAPI()
 def Hello():
   return {
    'message': 'Hello, world!',
-   'routes': ['/hi', '/teapot']
+   'routes': [
+     '/hi?name=yourname',
+     '/teapot'
+   ]
   }
 
 @app.get('/hi')
