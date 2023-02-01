@@ -1,4 +1,4 @@
-import requests
+import httpx
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
@@ -22,5 +22,5 @@ def Hi(name: str = ''):
 
 @app.get('/teapot', response_class=HTMLResponse)
 def Teapot():
-  data = requests.get('https://httpbin.org/status/418').text
+  data = httpx.get('https://httpbin.org/status/418').text
   return '<pre>'+data+'</pre>'
