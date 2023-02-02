@@ -1,26 +1,8 @@
-import httpx
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+
+from src.core.config import settings
+from src.api.routes import api_router
 
 app = FastAPI()
 
-@app.get('/')
-def Hello():
-  return {
-   'message': 'Hello, world!',
-   'routes': [
-     '/hi?name=yourname',
-     '/teapot'
-   ]
-  }
-
-@app.get('/hi')
-def Hi(name: str = ''):
-  return {
-    'Message': 'Hi! ' + name
-  }
-
-@app.get('/teapot', response_class=HTMLResponse)
-def Teapot():
-  data = httpx.get('https://httpbin.org/status/418').text
-  return '<pre>'+data+'</pre>'
+app.include_router(api_router, prefix=settings.API_V1_STR)
