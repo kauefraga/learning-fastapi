@@ -36,7 +36,7 @@ git clone https://github.com/kauefraga/learning-fastapi.git
 cd learning-fastapi
 
 pip install -r requirements.txt
-python3 src/main.py
+uvicorn src.main:app
 ```
 You are welcome to open issues and pull requests!
 
@@ -44,7 +44,8 @@ You are welcome to open issues and pull requests!
 
 - 🐍 [Python](https://www.python.org) - A programming language that lets you work quickly
 and integrate systems more effectively.
-- 🔮 [FastAPI](https://fastapi.tiangolo.com) - FastAPI framework, high performance, easy to learn, fast to code, ready for production
+- 🦋 [Httpx](https://www.python-httpx.org) - HTTPX is a fully featured HTTP client for Python 3, which provides sync and async APIs, and support for both HTTP/1.1 and HTTP/2.
+- 🔮 [FastAPI](https://fastapi.tiangolo.com) - FastAPI framework, high performance, easy to learn, fast to code, ready for production.
 - ☔ [Gunicorn](https://gunicorn.org) & [Uvicorn](https://www.uvicorn.org) - An ASGI web server, for Python.
 
 <!-- ## 📜 Coming soon... -->
